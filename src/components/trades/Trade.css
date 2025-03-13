@@ -1,0 +1,168 @@
+.trade-form {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.odds-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.odd-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    background: none;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.odd-button.selected {
+    border-color: #2563eb;
+    background-color: #eff6ff;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #4b5563;
+}
+
+.amount-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.potential-winnings {
+    background-color: #f3f4f6;
+    padding: 1rem;
+    border-radius: 6px;
+    margin: 1rem 0;
+    text-align: center;
+    font-weight: 500;
+    color: #2563eb;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.submit-button:hover {
+    background-color: #1d4ed8;
+}
+
+.submit-button:disabled {
+    background-color: #93c5fd;
+    cursor: not-allowed;
+}
+
+.error-message {
+    background-color: #fee2e2;
+    color: #dc2626;
+    padding: 0.75rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.trades-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.trades-header {
+    margin-bottom: 2rem;
+}
+
+.trades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.trade-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.trade-details {
+    margin: 1rem 0;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.status {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.status-pending {
+    background-color: #eab308;
+    color: white;
+}
+
+.status-settled {
+    background-color: #22c55e;
+    color: white;
+}
+
+.status-cancelled {
+    background-color: #64748b;
+    color: white;
+}
+
+.profit {
+    color: #22c55e;
+}
+
+.loss {
+    color: #dc2626;
+}
+
+@media (prefers-color-scheme: dark) {
+    .trade-card {
+        background-color: #1a1a1a;
+        color: #e5e7eb;
+    }
+}
+
+@media (max-width: 768px) {
+    .trades-container {
+        padding: 1rem;
+    }
+    
+    .trades-grid {
+        grid-template-columns: 1fr;
+    }
+}

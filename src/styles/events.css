@@ -1,0 +1,265 @@
+/* Event Card Styles */
+.event-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    transition: transform 0.2s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-2px);
+}
+
+/* Event Header */
+.event-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.event-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #1a1a1a;
+}
+
+/* Status Indicators */
+.status {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.status-live {
+    background-color: #22c55e;
+    color: white;
+}
+
+.status-upcoming {
+    background-color: #eab308;
+    color: white;
+}
+
+.status-completed {
+    background-color: #64748b;
+    color: white;
+}
+
+/* Event Info */
+.event-info {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    color: #64748b;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+/* Odds Section */
+.odds-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.75rem;
+    margin: 1rem 0;
+}
+
+.odd-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.75rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 6px;
+    background: none;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.odd-button.selected {
+    border-color: #2563eb;
+    background-color: #eff6ff;
+}
+
+.odd-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.odd-button .option {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.odd-button .value {
+    color: #2563eb;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+/* Trade Form */
+.trade-form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.amount-input {
+    padding: 0.75rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.trade-button {
+    padding: 0.75rem 1.5rem;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.trade-button:hover {
+    background-color: #1d4ed8;
+}
+
+.trade-button:disabled {
+    background-color: #93c5fd;
+    cursor: not-allowed;
+}
+
+/* Live Events */
+.live-events-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.live-events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.live-indicator {
+    width: 8px;
+    height: 8px;
+    background-color: #22c55e;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 0.5rem;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* Event Details */
+.event-details {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+/* Filter Buttons */
+.filter-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.filter-button {
+    padding: 0.5rem 1rem;
+    border: 1px solid #e5e7eb;
+    background: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.filter-button.active {
+    background-color: #2563eb;
+    color: white;
+    border-color: #2563eb;
+}
+
+/* Messages */
+.error-message {
+    background-color: #fee2e2;
+    color: #dc2626;
+    padding: 0.75rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 0.875rem;
+}
+
+.no-events {
+    text-align: center;
+    padding: 3rem;
+    background: #f8fafc;
+    border-radius: 8px;
+    color: #64748b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .event-details,
+    .live-events-container {
+        padding: 1rem;
+    }
+
+    .trade-form {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-buttons {
+        flex-direction: column;
+    }
+
+    .filter-button {
+        width: 100%;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .event-card,
+    .filter-button {
+        background-color: #1a1a1a;
+        color: #e5e7eb;
+    }
+
+    .event-header h3 {
+        color: #e5e7eb;
+    }
+
+    .amount-input {
+        background-color: #262626;
+        border-color: #404040;
+        color: #e5e7eb;
+    }
+
+    .no-events {
+        background: #262626;
+        color: #9ca3af;
+    }
+}

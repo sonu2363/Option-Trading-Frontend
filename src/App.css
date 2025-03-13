@@ -1,38 +1,197 @@
+/* Main App Container */
 .App {
-  text-align: center;
+  min-height: 100vh;
+  background-color: #f8fafc;
 }
 
-.App-logo {
-  height: 40vmin;
+/* Main Content Container */
+.main-content {
+  padding-top: 64px; /* Height of navbar */
+  min-height: calc(100vh - 64px);
+}
+
+/* Container Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Page Headers */
+.page-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.page-header h1 {
+  font-size: 2rem;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.page-header p {
+  color: #64748b;
+  margin-top: 0.5rem;
+}
+
+/* Grid Layouts */
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Flex Utilities */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+/* Spacing Utilities */
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Loading States */
+.loading {
+  opacity: 0.7;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .App {
+      background-color: #0f172a;
+  }
+
+  .page-header h1 {
+      color: #e5e7eb;
+  }
+
+  .page-header {
+      border-bottom-color: #1f2937;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .container {
+      padding: 1.5rem;
+  }
+
+  .grid-4 {
+      grid-template-columns: repeat(3, 1fr);
+  }
 }
 
-.App-link {
-  color: #61dafb;
+@media (max-width: 768px) {
+  .container {
+      padding: 1rem;
+  }
+
+  .grid-3,
+  .grid-4 {
+      grid-template-columns: repeat(2, 1fr);
+  }
+
+  .page-header h1 {
+      font-size: 1.75rem;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 640px) {
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+      grid-template-columns: 1fr;
   }
-  to {
-    transform: rotate(360deg);
+
+  .page-header h1 {
+      font-size: 1.5rem;
   }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Focus Styles */
+:focus {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* Accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
